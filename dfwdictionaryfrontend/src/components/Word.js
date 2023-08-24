@@ -78,7 +78,15 @@ export default function Word() {
     <Container>
       <Paper
         elevation={3}
-        style={{ paperStyle, display: "flex", flexDirection: "column" }}
+        style={{
+          paperStyle,
+          display: "flex",
+          flexDirection: "column",
+          padding: "25px 10px",
+          margin: "20px auto",
+          maxWidth: 500,
+          flexGrow: 1,
+        }}
       >
         <h1 style={{ color: "gray" }}>Add a Word</h1>
         <Box
@@ -106,7 +114,12 @@ export default function Word() {
             onChange={(e) => setDefinition(e.target.value)}
           />
         </Box>
-        <Button variant="contained" color="inherit" onClick={handleClickSubmit}>
+        <Button
+          variant="contained"
+          color="inherit"
+          onClick={handleClickSubmit}
+          style={{ backgroundColor: "#2E3B55", color: "white", marginTop: 10 }}
+        >
           Submit
         </Button>
       </Paper>
@@ -140,6 +153,7 @@ export default function Word() {
                 });
             }
           }}
+          style={{ backgroundColor: "#2E3B55", color: "white", margin: "10px" }}
         >
           {" "}
           {sortButtonText}{" "}
