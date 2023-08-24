@@ -25,6 +25,7 @@ public class WordController {
 
     @PostMapping("/add")
     public String add(@RequestBody Word word) {
+        word.setWord(word.getWord().substring(0, 1).toUpperCase() + word.getWord().substring(1));
         wordService.saveWord(word);
         return "Word added successfully";
     }
@@ -58,6 +59,15 @@ public class WordController {
         wordService.deleteWord(id);
         return "Word deleted successfully";
     }
+
+    /**
+     * Sorts words in alphabetical order
+     */
+    @GetMapping("sortByAlphabetical")
+    public List<Word> sortAlphabetically() {
+        return wordService.sortAlphabetically();
+    }
+    
 
     
     

@@ -42,12 +42,12 @@ public class WordServiceImpl implements WordService {
     public void deleteWord(int id) {
         wordRepository.deleteById(id);
     }
-    
 
-    
-
-
-
-  
+    @Override
+    public List<Word> sortAlphabetically() {
+        List<Word> words = wordRepository.findAll();
+        words.sort((w1, w2) -> w1.getWord().compareTo(w2.getWord()));
+        return words;
+    }
 
 }

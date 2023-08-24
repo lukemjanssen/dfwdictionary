@@ -5,9 +5,8 @@ import { Container, Paper, Button, Card } from "@mui/material";
 import { useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-
 export default function Word() {
-  const [sortButtonText, setSortButtonText] = useState("Sort by Length");
+  const [sortButtonText, setSortButtonText] = useState("Sort By: Default");
   const changeSortButtonText = (text) => setSortButtonText(text);
   const [word, setWord] = useState("");
   const [definition, setDefinition] = useState("");
@@ -34,6 +33,8 @@ export default function Word() {
     }).then(() => {
       console.log("New Word added");
     });
+    //reload the page
+    window.location.reload();
   };
 
   const handleClickSortAscending = (e) => {
@@ -117,14 +118,21 @@ export default function Word() {
           variant="contained"
           color="inherit"
           onClick={() => {
-            if (sortButtonText === "Sort by Length") {
-              changeSortButtonText("Ascending");
+            if (sortButtonText === "Sort By: Default") {
+              changeSortButtonText("Sort By: Ascending Length");
               handleClickSortAscending();
-            } else if (sortButtonText === "Ascending") {
-              changeSortButtonText("Descending");
+            } else if (sortButtonText === "Sort By: Ascending Length") {
+              changeSortButtonText("Sort By: Descending Length");
               handleClickSortDescending();
+            } else if (sortButtonText === "Sort By: Descending Length") {
+              changeSortButtonText("Sort By: Alphabetical");
+              fetch("http://localhost:8080/word/sortByAlphabetical")
+                .then((res) => res.json())
+                .then((result) => {
+                  setWords(result);
+                });
             } else {
-              changeSortButtonText("Sort by Length");
+              changeSortButtonText("Sort By: Default");
               fetch("http://localhost:8080/word/getAll")
                 .then((res) => res.json())
                 .then((result) => {
@@ -143,7 +151,6 @@ export default function Word() {
             style={{ margin: "10px", padding: "15px", textAlign: "left" }}
             key={word.id}
             id={word.id}
-            
           >
             <h3>Word: {word.word}</h3>
             <p>Defintion: {word.definition}</p>
