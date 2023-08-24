@@ -4,7 +4,7 @@ import Appbar from "./components/Appbar";
 import Word from "./components/Word";
 function App() {
   return (
-    <div className="App" style={{ backgroundColor: "#D3D3D3" }}>
+    <div className="App" style={{ backgroundColor: "#F7F6F1" }}>
       <Appbar />
       <Word />
     </div>

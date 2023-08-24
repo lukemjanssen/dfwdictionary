@@ -84,11 +84,35 @@ export default function Word() {
           flexDirection: "column",
           padding: "25px 10px",
           margin: "20px auto",
+          flexGrow: 1,
+        }}
+      >
+        <p style={{ color: "#333333" }}>
+          Welcome! This dictionary is a collection of words/neologisms used by
+          David Foster Wallace in his novel Infinite Jest. You can add words to
+          the dictionary and sort the words by length or alphabetically.
+        </p>
+        <br />
+        <p style={{ color: "#333333" }}>
+          To add a word, type the word and its definition in the boxes below and
+          click submit.
+        </p>
+        <br />
+      </Paper>
+
+      <Paper
+        elevation={3}
+        style={{
+          paperStyle,
+          display: "flex",
+          flexDirection: "column",
+          padding: "25px 10px",
+          margin: "20px auto",
           maxWidth: 500,
           flexGrow: 1,
         }}
       >
-        <h1 style={{ color: "gray" }}>Add a Word</h1>
+        <h1 style={{ color: "#333333" }}>Add a Word</h1>
         <Box
           component="form"
           sx={{
@@ -118,15 +142,14 @@ export default function Word() {
           variant="contained"
           color="inherit"
           onClick={handleClickSubmit}
-          style={{ backgroundColor: "#2E3B55", color: "white", marginTop: 10 }}
+          style={{ backgroundColor: "#AAAE8E", color: "white", marginTop: 10 }}
         >
           Submit
         </Button>
       </Paper>
 
-      <h1>WordList:</h1>
-
       <Card elevation={3}>
+        <h1 style={{ color: "#333333" }}>WordList:</h1>
         <Button
           variant="contained"
           color="inherit"
@@ -153,7 +176,7 @@ export default function Word() {
                 });
             }
           }}
-          style={{ backgroundColor: "#2E3B55", color: "white", margin: "10px" }}
+          style={{ backgroundColor: "#AAAE8E", color: "white", margin: "10px" }}
         >
           {" "}
           {sortButtonText}{" "}
@@ -170,9 +193,9 @@ export default function Word() {
             <p>Defintion: {word.definition}</p>
 
             <Button
-              variant="outlined"
+              variant="contained"
               startIcon={<DeleteIcon />}
-              style={{ backgroundColor: "#2E3B55", color: "white" }}
+              style={{ backgroundColor: "#AAAE8E", color: "white" }}
               size="small"
               onClick={handleClickDelete}
             >
