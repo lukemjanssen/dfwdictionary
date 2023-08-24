@@ -5,6 +5,7 @@ import { Container, Paper, Button, Card } from "@mui/material";
 import { useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+
 export default function Word() {
   const [sortButtonText, setSortButtonText] = useState("Sort by Length");
   const changeSortButtonText = (text) => setSortButtonText(text);
@@ -60,6 +61,8 @@ export default function Word() {
     }).then(() => {
       console.log("Word deleted");
     });
+    //reload the page
+    window.location.reload();
   };
 
   useEffect(() => {

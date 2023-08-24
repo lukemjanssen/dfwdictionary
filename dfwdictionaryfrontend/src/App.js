@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Appbar from './components/Appbar';
 import Word from './components/Word';
