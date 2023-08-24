@@ -82,22 +82,22 @@ export default function Word() {
           paperStyle,
           display: "flex",
           flexDirection: "column",
-          padding: "25px 10px",
+          padding: "0px 0px",
           margin: "20px auto",
           flexGrow: 1,
+          backgroundColor: "#AAAE8E",
         }}
       >
-        <p style={{ color: "#333333" }}>
+        <p style={{ color: "#FFFFFF" }}>
           Welcome! This dictionary is a collection of words/neologisms used by
           David Foster Wallace in his novel Infinite Jest. You can add words to
           the dictionary and sort the words by length or alphabetically.
         </p>
         <br />
-        <p style={{ color: "#333333" }}>
+        <p style={{ color: "#FFFFFF" }}>
           To add a word, type the word and its definition in the boxes below and
           click submit.
         </p>
-        <br />
       </Paper>
 
       <Paper

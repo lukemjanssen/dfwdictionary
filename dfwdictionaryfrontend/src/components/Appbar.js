@@ -75,6 +75,7 @@ export default function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ backgroundColor: "#FFFFFF" }}>
         <Toolbar>
+          {/*}
           <IconButton
             size="large"
             edge="start"
@@ -84,15 +85,17 @@ export default function SearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
+          */}
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style={{ marginLeft: 125, color: "#020122" }}
+            style={{ color: "#020122" }}
           >
             DFW Dictionary
           </Typography>
+          {/*
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -102,6 +105,7 @@ export default function SearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+            */}
         </Toolbar>
       </AppBar>
     </Box>

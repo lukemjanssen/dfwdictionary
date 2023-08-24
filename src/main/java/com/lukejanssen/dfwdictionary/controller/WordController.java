@@ -67,6 +67,19 @@ public class WordController {
     public List<Word> sortAlphabetically() {
         return wordService.sortAlphabetically();
     }
+
+    /**
+     * Searches through the book infinite jest and returns the page number and
+     * paragraph number of the first instance of the word
+     */
+    @GetMapping("/search/{word}")
+    public String search(@PathVariable String word) {
+        //TODO: implement search
+        return null;
+    }
+    
+    
+     
     
 
     
