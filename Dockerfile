@@ -1,5 +1,6 @@
-FROM eclipse-temurin:20-jdk-alpine
+FROM openjdk:20
 VOLUME /tmp
-COPY target/*.jar dfwdictionary.jar
-ENTRYPOINT ["java","-jar","/dfwdictionary.jar"]
 EXPOSE 8080
+ARG JAR_FILE=target/spring-boot-docker.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
