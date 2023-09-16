@@ -1,0 +1,6 @@
+com\lukejanssen\dfwdictionary\model\Word.class
+com\lukejanssen\dfwdictionary\DfwdictionaryApplication.class
+com\lukejanssen\dfwdictionary\service\WordService.class
+com\lukejanssen\dfwdictionary\repository\WordRepository.class
+com\lukejanssen\dfwdictionary\controller\WordController.class
+com\lukejanssen\dfwdictionary\service\WordServiceImpl.class
