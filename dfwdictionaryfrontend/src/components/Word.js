@@ -162,7 +162,7 @@ export default function Word() {
               handleClickSortDescending();
             } else if (sortButtonText === "Sort By: Descending Length") {
               changeSortButtonText("Sort By: Alphabetical");
-              fetch("http://localhost:8080/word/sortByAlphabetical")
+              fetch("http://containers-us-west-55.railway.app:8080/word/sortByAlphabetical")
                 .then((res) => res.json())
                 .then((result) => {
                   setWords(result);
