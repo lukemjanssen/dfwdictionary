@@ -14,5 +14,5 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:20-jdk
 COPY --from=build /target/*.jar dfwdictionary.jar
-EXPOSE 8080
+EXPOSE 8080:8080
 ENTRYPOINT ["java","-jar","dfwdictionary.jar"]
