@@ -169,7 +169,7 @@ export default function Word() {
                 });
             } else {
               changeSortButtonText("Sort By: Default");
-              fetch("http://containers-us-west-55.railway.app/word/getAll")
+              fetch("http://containers-us-west-55.railway.app:8080/word/getAll")
                 .then((res) => res.json())
                 .then((result) => {
                   setWords(result);
