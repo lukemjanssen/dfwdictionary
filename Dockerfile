@@ -1,7 +1,8 @@
-FROM openjdk:20-ea-4-jdk
+FROM jelastic/maven:3.8.6-openjdk-20.ea-b24 as build
+COPY . . 
+RUN mvn clean package -DskipTests
 
-WORKDIR /app
-
-COPY target/dfwdictionary-0.0.1-SNAPSHOT.jar /app/springboot-restful-webservices.jar
-
-ENTRYPOINT ["java", "-jar", "springboot-restful-webservices.jar"]
+FROM openjdk:20-jdk
+COPY --from=build /target/*.jar dfwdictionary.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","dfwdictionary.jar"]
