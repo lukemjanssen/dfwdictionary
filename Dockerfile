@@ -8,7 +8,7 @@
 
 
 #stage 2
-FROM jelastic/maven:3.8.6-openjdk-20.ea-b24 as build
+FROM 3.9.4-eclipse-temurin-11 as build
 COPY . . 
 RUN mvn clean package -DskipTests
 
