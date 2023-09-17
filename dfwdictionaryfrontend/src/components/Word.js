@@ -169,7 +169,7 @@ export default function Word() {
                 });
             } else {
               changeSortButtonText("Sort By: Default");
-              fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
+              fetch("https://dfwdictionarybackend.onrender.com/word/getAll")
                 .then((res) => res.json())
                 .then((result) => {
                   setWords(result);
