@@ -26,7 +26,7 @@ export default function Word() {
     e.preventDefault();
     const dfwWord = { word, definition };
     console.log(dfwWord);
-    fetch("http://sql12.freemysqlhosting.net:3306/word/add", {
+    fetch("http://sql12.freemysqlhosting.net:8080/word/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dfwWord),
@@ -38,7 +38,7 @@ export default function Word() {
   };
 
   const handleClickSortAscending = (e) => {
-    fetch("http://sql12.freemysqlhosting.net:3306/word/sortByLengthAsc")
+    fetch("http://sql12.freemysqlhosting.net:8080/word/sortByLengthAsc")
       .then((res) => res.json())
       .then((result) => {
         setWords(result);
@@ -46,7 +46,7 @@ export default function Word() {
   };
 
   const handleClickSortDescending = (e) => {
-    fetch("http://sql12.freemysqlhosting.net:3306/word/sortByLengthDesc")
+    fetch("http://sql12.freemysqlhosting.net:8080/word/sortByLengthDesc")
       .then((res) => res.json())
       .then((result) => {
         setWords(result);
@@ -57,7 +57,7 @@ export default function Word() {
     //get the word connected to the delete button
     const id = e.currentTarget.parentNode.id;
     console.log(id);
-    fetch("http://sql12.freemysqlhosting.net:3306/word/delete/" + id, {
+    fetch("http://sql12.freemysqlhosting.net:8080/word/delete/" + id, {
       method: "DELETE",
     }).then(() => {
       console.log("Word deleted");
@@ -67,7 +67,7 @@ export default function Word() {
   };
 
   useEffect(() => {
-    fetch("http://sql12.freemysqlhosting.net:3306/word/getAll")
+    fetch("http://sql12.freemysqlhosting.net:8080/word/getAll")
       .then((res) => res.json())
       .then((result) => {
         setWords(result);
