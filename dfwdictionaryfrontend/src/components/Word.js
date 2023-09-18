@@ -34,14 +34,11 @@ export default function Word() {
       console.log("New Word added");
     });
     //reload words
-    useEffect(() => {
-      fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
-        .then((res) => res.json())
-        .then((result) => {
-          setWords(result);
-        });
-    }, []);
-
+    fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
+      .then((res) => res.json())
+      .then((result) => {
+        setWords(result);
+      });
     //clear the input boxes
     setWord("");
     setDefinition("");
@@ -73,13 +70,11 @@ export default function Word() {
       console.log("Word deleted");
     });
     //reload words
-    useEffect(() => {
-      fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
-        .then((res) => res.json())
-        .then((result) => {
-          setWords(result);
-        });
-    }, []);
+    fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
+      .then((res) => res.json())
+      .then((result) => {
+        setWords(result);
+      });
 
   };
 
