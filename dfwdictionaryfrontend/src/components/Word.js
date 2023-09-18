@@ -38,7 +38,7 @@ export default function Word() {
   };
 
   const handleClickSortAscending = (e) => {
-    fetch("https://https://dfwdictionary-production.up.railway.app/word/sortByLengthAsc")
+    fetch("https://dfwdictionary-production.up.railway.app/word/sortByLengthAsc")
       .then((res) => res.json())
       .then((result) => {
         setWords(result);
@@ -46,7 +46,7 @@ export default function Word() {
   };
 
   const handleClickSortDescending = (e) => {
-    fetch("https://https://dfwdictionary-production.up.railway.app/word/sortByLengthDesc")
+    fetch("https://dfwdictionary-production.up.railway.app/word/sortByLengthDesc")
       .then((res) => res.json())
       .then((result) => {
         setWords(result);
