@@ -26,7 +26,7 @@ export default function Word() {
     e.preventDefault();
     const dfwWord = { word, definition };
     console.log(dfwWord);
-    fetch("https://https://dfwdictionary-production.up.railway.app/word/add", {
+    fetch("https://dfwdictionary-production.up.railway.app/word/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dfwWord),
@@ -57,7 +57,7 @@ export default function Word() {
     //get the word connected to the delete button
     const id = e.currentTarget.parentNode.id;
     console.log(id);
-    fetch("https://https://dfwdictionary-production.up.railway.app/word/delete/" + id, {
+    fetch("https://dfwdictionary-production.up.railway.app/word/delete/" + id, {
       method: "DELETE",
     }).then(() => {
       console.log("Word deleted");
@@ -67,7 +67,7 @@ export default function Word() {
   };
 
   useEffect(() => {
-    fetch("https://https://dfwdictionary-production.up.railway.app/word/getAll")
+    fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
       .then((res) => res.json())
       .then((result) => {
         setWords(result);
@@ -162,14 +162,14 @@ export default function Word() {
               handleClickSortDescending();
             } else if (sortButtonText === "Sort By: Descending Length") {
               changeSortButtonText("Sort By: Alphabetical");
-              fetch("https://https://dfwdictionary-production.up.railway.app/word/sortByAlphabetical")
+              fetch("https://dfwdictionary-production.up.railway.app/word/sortByAlphabetical")
                 .then((res) => res.json())
                 .then((result) => {
                   setWords(result);
                 });
             } else {
               changeSortButtonText("Sort By: Default");
-              fetch("https://https://dfwdictionary-production.up.railway.app/word/getAll")
+              fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
                 .then((res) => res.json())
                 .then((result) => {
                   setWords(result);
