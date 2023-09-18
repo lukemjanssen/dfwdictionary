@@ -33,8 +33,15 @@ export default function Word() {
     }).then(() => {
       console.log("New Word added");
     });
-    //reload the page
-    window.location.reload();
+    //reload words
+    fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
+      .then((res) => res.json())
+      .then((result) => {
+        setWords(result);
+      });
+    //clear the input boxes
+    setWord("");
+    setDefinition("");
   };
 
   const handleClickSortAscending = (e) => {
@@ -62,8 +69,13 @@ export default function Word() {
     }).then(() => {
       console.log("Word deleted");
     });
-    //reload the page
-    window.location.reload();
+    //reload words
+    fetch("https://dfwdictionary-production.up.railway.app/word/getAll")
+      .then((res) => res.json())
+      .then((result) => {
+        setWords(result);
+      });
+
   };
 
   useEffect(() => {
